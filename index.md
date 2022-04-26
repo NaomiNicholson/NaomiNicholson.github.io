@@ -1,6 +1,6 @@
 ## Introduction
 
-Godspeed is a robot that follows running track lines and uses a fan to cool the user down. It additionally maintains a set distance between itself and the user to avoid any collisions.
+Godspeed is a robot that follows running track lines and uses a fan to cool the user down. It additionally maintains a set distance between itself and the user and avoids collisions with oncoming obstructions.
 
 ## Design Process
 

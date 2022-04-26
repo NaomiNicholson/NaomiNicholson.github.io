@@ -27,7 +27,7 @@ How we got there.
 
 ###### Power Requirements:
 
-The gearmotors are powered by 2 different 4xAA battery packs (6 V).
+The gearmotors are powered by 2 different 4xAA battery packs (6 V each).
 
 The brushless motor is powered by a 9 V battery pack.
 
@@ -35,6 +35,11 @@ The mbed is powered by a 5 V battery pack.
 
 ###### Wiring:
 
+| Mbed | IR Sensor | Front Right Gearmotor |
+|-------|--------|---------|
+| Pin 9 | Vin | Vin |
+| Pin 10 | GND | GND |
+| Pin 20 | OUT | OUT |
 
 ## Code
 

@@ -22,7 +22,8 @@ How we got there.
 - 1 [Brushless Motor](https://www.amainhobbies.com/blade-torrent-110-11047600kv-fpv-racing-motor-blha1024/p633058) and Propeller
 - 1 5 V Battery Pack
 - 1 9 V Battery Pack
-- 1 Custom 3D Printed Chassis
+- 1 [Custom 3D Printed Chassis](https://github.com/NaomiNicholson/NaomiNicholson.github.io/files/8566920/4180_Chassis.zip)
+
 
 ###### Power Requirements:
 

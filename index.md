@@ -18,11 +18,19 @@ How we got there.
 - 4 [Rubber Tire Wheels](https://www.sparkfun.com/products/13259)
 - 4 [Gearmotors](https://www.sparkfun.com/products/13302)
 - 2 4xAA Battery Holder
+- 8 AA Batteries
+- 1 [Brushless Motor](https://www.amainhobbies.com/blade-torrent-110-11047600kv-fpv-racing-motor-blha1024/p633058) and Propeller
+- 1 5 V Battery Pack
+- 1 9 V Battery Pack
 - 1 Custom 3D Printed Chassis
 
 ###### Power Requirements:
 
+The gearmotors are powered by 2 different 4xAA battery packs (6 V).
 
+The brushless motor is powered by a 9 V battery pack.
+
+The mbed is powered by a 5 V battery pack.
 
 ###### Wiring:
 

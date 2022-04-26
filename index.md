@@ -16,8 +16,8 @@ How we got there.
 - 2 [DC Barrel Jack Adapters](https://www.sparkfun.com/products/10811)
 - 4 [Rubber Tire Wheels](https://www.sparkfun.com/products/13259)
 - 4 [Gearmotors](https://www.sparkfun.com/products/13302)
-- 2 [IR Reflective Sensor Modules]()
-- 2 [IR Distance Sensors]()
+- 2 [IR Reflective Sensor Modules](https://www.amazon.com/dp/B07FJLMLVZ?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+- 2 [IR Distance Sensors](https://www.sparkfun.com/products/242)
 - 2 4xAA Battery Holder
 - 8 AA Batteries
 - 1 [Brushless Motor](https://www.amainhobbies.com/blade-torrent-110-11047600kv-fpv-racing-motor-blha1024/p633058) and Propeller

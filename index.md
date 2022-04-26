@@ -38,6 +38,7 @@ The mbed is powered by a 5 V battery pack.
 ###### Wiring:
 
 **Gearmotor Subsystem:**
+
 | Mbed | Front Right Gearmotor | Back Right Gearmotor | Front Left Gearmotor | Back Left Gearmotor |
 |-------|--------|---------|---------|---------|
 | Pin 9 | Vin | Vin | Vin | Vin |
@@ -45,6 +46,7 @@ The mbed is powered by a 5 V battery pack.
 | Pin 20 | OUT | OUT | OUT | OUT |
 
 **Brushless Motor Subsystem:**
+
 | Mbed | Brushless Motor |
 |-------|--------|
 | Pin 9 | Vin |
@@ -52,6 +54,7 @@ The mbed is powered by a 5 V battery pack.
 | Pin 20 | OUT |
 
 **Mbed Subsystem:**
+
 | Mbed | IR Reflective Sensor | IR Distance Sensor | Bluefruit | Front H-Bridge | Back H-Bridge |
 |-------|--------|---------|---------|---------|---------|
 | Pin 9 | Vin | Vin | Vin | Vin | Vin |

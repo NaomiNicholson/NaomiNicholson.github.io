@@ -8,7 +8,21 @@ How we got there.
 
 ## How to Setup This Robot
 
-Parts, wiring, power requirements...
+###### Necessary Parts:
+
+- 1 ARM Mbed
+- 2 LIDAR ToF Distance Sensor
+- 1 Bluefruit LE UART Friend - BLE
+- 2 H-Bridge Motor Drivers
+- 2 DC Barrel Jack Adapters
+- 4 Rubber Tire Wheels
+- 4 Gearmotors
+- 
+
+###### Power Requirements:
+
+###### Wiring:
+
 
 ## Code
 

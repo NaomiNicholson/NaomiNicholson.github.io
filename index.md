@@ -35,11 +35,11 @@ The mbed is powered by a 5 V battery pack.
 
 ###### Wiring:
 
-| Mbed | IR Sensor | Front Right Gearmotor |
-|-------|--------|---------|
-| Pin 9 | Vin | Vin |
-| Pin 10 | GND | GND |
-| Pin 20 | OUT | OUT |
+| Mbed | IR Sensor | Front Right Gearmotor | Back Right Gearmotor | Front Left Gearmotor | Back Left Gearmotor |
+|-------|--------|---------|---------|---------|---------|
+| Pin 9 | Vin | Vin | Vin | Vin | Vin |
+| Pin 10 | GND | GND | GND | GND | GND |
+| Pin 20 | OUT | OUT | OUT | OUT | OUT |
 
 ## Code
 

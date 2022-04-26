@@ -10,14 +10,14 @@ How we got there.
 
 ###### Necessary Parts:
 
-- 1 ARM Mbed
-- 2 LIDAR ToF Distance Sensor
-- 1 Bluefruit LE UART Friend - BLE
-- 2 H-Bridge Motor Drivers
-- 2 DC Barrel Jack Adapters
-- 4 Rubber Tire Wheels
-- 4 Gearmotors
-- 
+- 1 [ARM Mbed](https://www.sparkfun.com/products/9564)
+- 2 [LIDAR ToF Distance Sensor](https://www.adafruit.com/product/3317)
+- 1 [Bluefruit LE UART Friend - BLE](https://www.adafruit.com/product/2479)
+- 2 [H-Bridge Motor Drivers](https://www.sparkfun.com/products/14450)
+- 2 [DC Barrel Jack Adapters](https://www.sparkfun.com/products/10811)
+- 4 [Rubber Tire Wheels](https://www.sparkfun.com/products/13259)
+- 4 [Gearmotors](https://www.sparkfun.com/products/13302)
+- 2 4xAA Battery Holder
 
 ###### Power Requirements:
 

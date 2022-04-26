@@ -11,12 +11,13 @@ How we got there.
 ###### Necessary Parts:
 
 - 1 [ARM Mbed](https://www.sparkfun.com/products/9564)
-- 2 [LIDAR ToF Distance Sensor](https://www.adafruit.com/product/3317)
 - 1 [Bluefruit LE UART Friend - BLE](https://www.adafruit.com/product/2479)
 - 2 [H-Bridge Motor Drivers](https://www.sparkfun.com/products/14450)
 - 2 [DC Barrel Jack Adapters](https://www.sparkfun.com/products/10811)
 - 4 [Rubber Tire Wheels](https://www.sparkfun.com/products/13259)
 - 4 [Gearmotors](https://www.sparkfun.com/products/13302)
+- 2 [IR Reflective Sensor Modules]()
+- 2 [IR Distance Sensors]()
 - 2 4xAA Battery Holder
 - 8 AA Batteries
 - 1 [Brushless Motor](https://www.amainhobbies.com/blade-torrent-110-11047600kv-fpv-racing-motor-blha1024/p633058) and Propeller
@@ -41,6 +42,18 @@ The mbed is powered by a 5 V battery pack.
 | Pin 9 | Vin | Vin | Vin | Vin |
 | Pin 10 | GND | GND | GND | GND |
 | Pin 20 | OUT | OUT | OUT | OUT |
+
+| Mbed | Brushless Motor |
+|-------|--------|
+| Pin 9 | Vin |
+| Pin 10 | GND |
+| Pin 20 | OUT |
+
+| Mbed | IR Reflective Sensor | IR Distance Sensor | Bluefruit | Front H-Bridge | Back H-Bridge |
+|-------|--------|---------|---------|---------|---------|
+| Pin 9 | Vin | Vin | Vin | Vin | Vin |
+| Pin 10 | GND | GND | GND | GND | GND |
+| Pin 20 | OUT | OUT | OUT | OUT | OUT |
 
 ## Code
 

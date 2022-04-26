@@ -2,6 +2,28 @@
 
 Godspeed is a robot that follows running track lines and uses a fan to cool the user down. It additionally maintains a set distance between itself and the user to avoid any collisions.
 
+## Design Process
+
+How we got there.
+
+## How to Setup This Robot
+
+Parts, wiring, power requirements...
+
+## Code
+
+```
+code snippet here
+```
+
+## Final Results
+
+Pictures and demo videos here
+
+## References
+
+All URLs referenced during the project
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for

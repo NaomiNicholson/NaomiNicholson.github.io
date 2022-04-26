@@ -24,6 +24,7 @@ How we got there.
 - 1 9 V Battery Pack
 - 1 [Custom 3D Printed Chassis](https://github.com/NaomiNicholson/NaomiNicholson.github.io/files/8566920/4180_Chassis.zip)
 
+<img width="473" alt="BottomChassis" src="https://user-images.githubusercontent.com/104459763/165387789-0ad63413-8375-432d-972e-4dc1cfaeee35.PNG"> <img width="391" alt="TopChassis" src="https://user-images.githubusercontent.com/104459763/165394988-1d8c31b5-9632-44e5-aa03-bf9e54e58a8e.PNG">
 
 ###### Power Requirements:
 
@@ -35,11 +36,11 @@ The mbed is powered by a 5 V battery pack.
 
 ###### Wiring:
 
-| Mbed | IR Sensor | Front Right Gearmotor | Back Right Gearmotor | Front Left Gearmotor | Back Left Gearmotor |
-|-------|--------|---------|---------|---------|---------|
-| Pin 9 | Vin | Vin | Vin | Vin | Vin |
-| Pin 10 | GND | GND | GND | GND | GND |
-| Pin 20 | OUT | OUT | OUT | OUT | OUT |
+| Mbed | Front Right Gearmotor | Back Right Gearmotor | Front Left Gearmotor | Back Left Gearmotor |
+|-------|--------|---------|---------|---------|
+| Pin 9 | Vin | Vin | Vin | Vin |
+| Pin 10 | GND | GND | GND | GND |
+| Pin 20 | OUT | OUT | OUT | OUT |
 
 ## Code
 
@@ -50,7 +51,6 @@ code snippet here
 ## Final Results
 
 Pictures and demo videos here
-<img width="473" alt="BottomChassis" src="https://user-images.githubusercontent.com/104459763/165387789-0ad63413-8375-432d-972e-4dc1cfaeee35.PNG">
 
 
 ## References

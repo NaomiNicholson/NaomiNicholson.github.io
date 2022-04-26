@@ -22,7 +22,7 @@ How we got there.
 
 ###### Power Requirements:
 
-######### Test
+
 
 ###### Wiring:
 
@@ -36,6 +36,8 @@ code snippet here
 ## Final Results
 
 Pictures and demo videos here
+<img width="473" alt="BottomChassis" src="https://user-images.githubusercontent.com/104459763/165387789-0ad63413-8375-432d-972e-4dc1cfaeee35.PNG">
+
 
 ## References
 

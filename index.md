@@ -45,7 +45,7 @@ The mbed is powered by a 5 V battery pack.
 **Front Gearmotor Subsystem:**
 
 | Mbed | Front Right Gearmotor | Back Right Gearmotor | Front Left Gearmotor | Back Left Gearmotor | 6 V Battery Pack |
-|-------|--------|---------|---------|---------|
+|-------|--------|---------|---------|---------|---------|
 | GND | GND |  |  |  | - |
 |  | GND | GND | GND | GND | + |
 | Vout | OUT | OUT | OUT | OUT |  |

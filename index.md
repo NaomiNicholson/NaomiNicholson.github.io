@@ -82,11 +82,11 @@ The mbed is powered by a 5 V battery pack.
 
 **Brushless Motor Subsystem:**
 
-| Mbed | Brushless Motor |
-|-------|--------|
-| Pin 9 | Vin |
-| Pin 10 | GND |
-| Pin 20 | OUT |
+| Mbed | Brushless Motor | 9V Battery Pack |
+|-------|--------|--------|
+| Pin 9 | Vin |  |
+| Pin 10 | GND |  |
+| Pin 20 | OUT |  |
 
 **Mbed Subsystem:**
 

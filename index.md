@@ -90,20 +90,21 @@ The mbed is powered by a 5 V battery pack.
 
 **Mbed Subsystem:**
 
-| Mbed | Left IR Reflective Sensor | Right IR Reflective Sensor | Left IR Distance Sensor | Right IR Distance Sensor | Sonar Sensor | Bluefruit | 6V Battery Pack |
-|-------|--------|---------|---------|---------|---------|---------|---------|
-| Vout | Vcc | Vcc |  |  |  |  |  |
-| Vu |  |  | Vcc | Vcc | Vcc |  |  |
-| GND | GND | GND | GND | GND | GND | GND, CTS | - |
-| Pin 16 | OUT |  |  |  |  |  |  |
-| Pin 17 |  | OUT |  |  |  |  |  |
-| Pin 18 |  |  | OUT |  |  |  |  |
-| Pin 19 |  |  |  | OUT |  |  |  |
-| Pin 13 |  |  |  |  | Trig |  |  |
-| Pin 14 |  |  |  |  | Echo |  |  |
-| Pin 27 |  |  |  |  |  | TXO |  |
-| Pin 28 |  |  |  |  |  | RXI |  |
-|  |  |  |  |  |  | Vin | + |
+| Mbed | Left IR Reflective Sensor | Right IR Reflective Sensor | Left IR Distance Sensor | Right IR Distance Sensor | Sonar Sensor | Bluefruit | 6V Battery Pack | 5V Battery Pack |
+|-------|--------|---------|---------|---------|---------|---------|---------|---------|
+| Vin |  |  |  |  |  |  |  | + |
+| Vout | Vcc | Vcc |  |  |  |  |  |  |
+| Vu |  |  | Vcc | Vcc | Vcc |  |  |  |
+| GND | GND | GND | GND | GND | GND | GND, CTS | - | - |
+| Pin 16 | OUT |  |  |  |  |  |  |  |
+| Pin 17 |  | OUT |  |  |  |  |  |  |
+| Pin 18 |  |  | OUT |  |  |  |  |  |
+| Pin 19 |  |  |  | OUT |  |  |  |  |
+| Pin 13 |  |  |  |  | Trig |  |  |  |
+| Pin 14 |  |  |  |  | Echo |  |  |  |
+| Pin 27 |  |  |  |  |  | TXO |  |  |
+| Pin 28 |  |  |  |  |  | RXI |  |  |
+|  |  |  |  |  |  | Vin | + |  |
 
 ## Code
 

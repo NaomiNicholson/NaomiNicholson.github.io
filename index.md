@@ -44,7 +44,7 @@ The mbed is powered by a 5 V battery pack.
 
 **Front Gearmotor Subsystem:**
 
-| Mbed | H-Bridge Driver | Front Left Motor | Front Right Motor | 6 V Battery Pack |
+| Mbed | H-Bridge Driver | Front Left Motor | Front Right Motor | 6V Battery Pack |
 |-------|--------|---------|---------|---------|
 | GND | GND |  |  | - |
 |  | Vm |  |  | + |
@@ -63,11 +63,22 @@ The mbed is powered by a 5 V battery pack.
 
 **Back Gearmotor Subsystem:**
 
-| Mbed | Front Right Gearmotor | Back Right Gearmotor | Front Left Gearmotor | Back Left Gearmotor |
+| Mbed | H-Bridge Driver | Back Left Motor | Back Right Motor | 6V Battery Pack |
 |-------|--------|---------|---------|---------|
-| Pin 9 | Vin | Vin | Vin | Vin |
-| Pin 10 | GND | GND | GND | GND |
-| Pin 20 | OUT | OUT | OUT | OUT |
+| GND | GND |  |  | - |
+|  | Vm |  |  | + |
+| Vout | Vcc |  |  |  |
+| Pin 7 | Vcc |  |  |  |
+| Pin 8 | AI1 |  |  |  |
+| Pin 30 | AI2 |  |  |  |
+| Pin 29 | BI1 |  |  |  |
+|  | AO1 | + |  |  |
+|  | AO2 | - |  |  |
+|  | BO1 |  | + |  |
+|  | BO2 |  | - |  |
+| Pin 22 | pwma |  |  |  |
+| Pin 24 | pwmb |  |  |  |
+| Vout | stby |  |  |  |
 
 **Brushless Motor Subsystem:**
 
@@ -79,11 +90,21 @@ The mbed is powered by a 5 V battery pack.
 
 **Mbed Subsystem:**
 
-| Mbed | IR Reflective Sensor | IR Distance Sensor | Bluefruit | Front H-Bridge | Back H-Bridge |
-|-------|--------|---------|---------|---------|---------|
-| Pin 9 | Vin | Vin | Vin | Vin | Vin |
-| Pin 10 | GND | GND | GND | GND | GND |
-| Pin 20 | OUT | OUT | OUT | OUT | OUT |
+| Mbed | Left IR Reflective Sensor | Right IR Reflective Sensor | Left IR Distance Sensor | Right IR Distance Sensor | Sonar Sensor | Bluefruit | 6V Battery Pack |
+|-------|--------|---------|---------|---------|---------|---------|---------|
+| Vout | VCC |  |  |  |  |  |  |
+| Vu |  |  |  |  | Vcc | + |  |
+| GND | GND | GND | GND | GND | GND | GND, CTS, - | - |
+| Pin 16 | OUT |  |  |  |  |  |  |
+| Pin 17 |  |  |  |  |  |  |  |
+| Pin 18 |  |  |  |  |  |  |  |
+| Pin 19 |  |  |  |  |  |  |  |
+| Pin 13 |  |  |  |  | Trig |  |  |
+| Pin 14 |  |  |  |  | Echo |  |  |
+| Pin 19 |  |  |  |  |  |  |  |
+| Pin 27 |  |  |  |  |  | TXO |  |
+| Pin 28 |  |  |  |  |  | RXI |  |
+|  |  |  |  |  |  | + | + |
 
 ## Code
 

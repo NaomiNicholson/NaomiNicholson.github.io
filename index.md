@@ -49,10 +49,10 @@ The mbed is powered by a 5 V battery pack.
 | GND | GND |  |  | - |
 |  | Vm |  |  | + |
 | Vout | Vcc |  |  |  |
-| Pin 5 | Vcc |  |  |  |
-| Pin 6 | AI1 |  |  |  |
-| Pin 11 | AI2 |  |  |  |
-| Pin 12 | BI1 |  |  |  |
+| Pin 5 | AI1 |  |  |  |
+| Pin 6 | AI2 |  |  |  |
+| Pin 11 | BI1 |  |  |  |
+| Pin 12 | BI2 |  |  |  |
 |  | AO1 | + |  |  |
 |  | AO2 | - |  |  |
 |  | BO1 |  | + |  |
@@ -68,10 +68,10 @@ The mbed is powered by a 5 V battery pack.
 | GND | GND |  |  | - |
 |  | Vm |  |  | + |
 | Vout | Vcc |  |  |  |
-| Pin 7 | Vcc |  |  |  |
-| Pin 8 | AI1 |  |  |  |
-| Pin 30 | AI2 |  |  |  |
-| Pin 29 | BI1 |  |  |  |
+| Pin 7 | AI1 |  |  |  |
+| Pin 8 | AI2 |  |  |  |
+| Pin 30 | BI1 |  |  |  |
+| Pin 29 | BI2 |  |  |  |
 |  | AO1 | + |  |  |
 |  | AO2 | - |  |  |
 |  | BO1 |  | + |  |
@@ -84,16 +84,16 @@ The mbed is powered by a 5 V battery pack.
 
 | Mbed | Brushless Motor | 9V Battery Pack |
 |-------|--------|--------|
-| Pin 9 | Vin |  |
-| Pin 10 | GND |  |
-| Pin 20 | OUT |  |
+|  | Vcc | + |
+| GND | GND | - |
+| Pin 25 | Signal |  |
 
 **Mbed Subsystem:**
 
 | Mbed | Left IR Reflective Sensor | Right IR Reflective Sensor | Left IR Distance Sensor | Right IR Distance Sensor | Sonar Sensor | Bluefruit | 6V Battery Pack |
 |-------|--------|---------|---------|---------|---------|---------|---------|
-| Vout | VCC | VCC |  |  |  |  |  |
-| Vu |  |  | VCC | VCC | Vcc |  |  |
+| Vout | Vcc | Vcc |  |  |  |  |  |
+| Vu |  |  | Vcc | Vcc | Vcc |  |  |
 | GND | GND | GND | GND | GND | GND | GND, CTS | - |
 | Pin 16 | OUT |  |  |  |  |  |  |
 | Pin 17 |  | OUT |  |  |  |  |  |

@@ -44,22 +44,22 @@ The mbed is powered by a 5 V battery pack.
 
 **Front Gearmotor Subsystem:**
 
-| Mbed | Front Right Gearmotor | Back Right Gearmotor | Front Left Gearmotor | Back Left Gearmotor | 6 V Battery Pack |
-|-------|--------|---------|---------|---------|---------|
-| GND | GND |  |  |  | - |
-|  | GND | GND | GND | GND | + |
-| Vout | OUT | OUT | OUT | OUT |  |
-| Pin 5 | OUT | OUT | OUT | OUT |  |
-| Pin 6 | OUT | OUT | OUT | OUT |  |
-| Pin 11 | OUT | OUT | OUT | OUT |  |
-| Pin 12 | OUT | OUT | OUT | OUT |  |
-|  | OUT | OUT | OUT | OUT |  |
-|  | OUT | OUT | OUT | OUT |  |
-|  | OUT | OUT | OUT | OUT |  |
-|  | OUT | OUT | OUT | OUT |  |
-| Pin 21 | OUT | OUT | OUT | OUT |  |
-| Pin 23 | OUT | OUT | OUT | OUT |  |
-| Vout | OUT | OUT | OUT | OUT |  |
+| Mbed | H-Bridge Driver | Front Left Motor | Front Right Motor | 6 V Battery Pack |
+|-------|--------|---------|---------|---------|
+| GND | GND |  |  | - |
+|  | Vm |  |  | + |
+| Vout | Vcc |  |  |  |
+| Pin 5 | Vcc |  |  |  |
+| Pin 6 | AI1 |  |  |  |
+| Pin 11 | AI2 |  |  |  |
+| Pin 12 | BI1 |  |  |  |
+|  | AO1 | + |  |  |
+|  | AO2 | - |  |  |
+|  | BO1 |  | + |  |
+|  | BO2 |  | - |  |
+| Pin 21 | pwma |  |  |  |
+| Pin 23 | pwmb |  |  |  |
+| Vout | stby |  |  |  |
 
 **Back Gearmotor Subsystem:**
 

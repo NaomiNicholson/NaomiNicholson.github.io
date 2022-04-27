@@ -92,8 +92,8 @@ The mbed is powered by a 5 V battery pack.
 
 | Mbed | Left IR Reflective Sensor | Right IR Reflective Sensor | Left IR Distance Sensor | Right IR Distance Sensor | Sonar Sensor | Bluefruit | 6V Battery Pack |
 |-------|--------|---------|---------|---------|---------|---------|---------|
-| Vout | VCC |  |  |  |  |  |  |
-| Vu |  |  |  |  | Vcc |  |  |
+| Vout | VCC | VCC |  |  |  |  |  |
+| Vu |  |  | VCC | VCC | Vcc |  |  |
 | GND | GND | GND | GND | GND | GND | GND, CTS | - |
 | Pin 16 | OUT |  |  |  |  |  |  |
 | Pin 17 |  | OUT |  |  |  |  |  |
@@ -101,7 +101,6 @@ The mbed is powered by a 5 V battery pack.
 | Pin 19 |  |  |  | OUT |  |  |  |
 | Pin 13 |  |  |  |  | Trig |  |  |
 | Pin 14 |  |  |  |  | Echo |  |  |
-| Pin 19 |  |  |  |  |  |  |  |
 | Pin 27 |  |  |  |  |  | TXO |  |
 | Pin 28 |  |  |  |  |  | RXI |  |
 |  |  |  |  |  |  | Vin | + |

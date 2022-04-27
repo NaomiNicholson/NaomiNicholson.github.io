@@ -1,10 +1,15 @@
 ## Introduction
 
-Godspeed is a robot that follows running track lines and uses a fan to cool the user down. It additionally maintains a set distance between itself and the user and avoids collisions with oncoming obstructions.
+Godspeed is a robot that follows running track lines and uses a fan to cool the user down. It additionally maintains a set distance between itself and the user and avoids collisions with oncoming obstructions. This robot allows the user to enjoy a cool walk along a terrain marked with a line, such as the Georgia Tech tracks.
 
 ## Design Process
 
-How we got there.
+This project started off with three unique goals:
+1. The device would need to adjust itself and follow a predetermined line.
+2. The device would need to detect incoming collisions and avoid them.
+3. The device would need to have user-ajustable fan speed and distance between itself and the user through Bluetooth.
+
+
 
 ## How to Setup This Robot
 

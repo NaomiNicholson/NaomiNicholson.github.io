@@ -42,7 +42,26 @@ The mbed is powered by a 5 V battery pack.
 
 ###### Wiring:
 
-**Gearmotor Subsystem:**
+**Front Gearmotor Subsystem:**
+
+| Mbed | Front Right Gearmotor | Back Right Gearmotor | Front Left Gearmotor | Back Left Gearmotor | 6 V Battery Pack |
+|-------|--------|---------|---------|---------|
+| GND | GND |  |  |  | - |
+|  | GND | GND | GND | GND | + |
+| Vout | OUT | OUT | OUT | OUT |  |
+| Pin 5 | OUT | OUT | OUT | OUT |  |
+| Pin 6 | OUT | OUT | OUT | OUT |  |
+| Pin 11 | OUT | OUT | OUT | OUT |  |
+| Pin 12 | OUT | OUT | OUT | OUT |  |
+|  | OUT | OUT | OUT | OUT |  |
+|  | OUT | OUT | OUT | OUT |  |
+|  | OUT | OUT | OUT | OUT |  |
+|  | OUT | OUT | OUT | OUT |  |
+| Pin 21 | OUT | OUT | OUT | OUT |  |
+| Pin 23 | OUT | OUT | OUT | OUT |  |
+| Vout | OUT | OUT | OUT | OUT |  |
+
+**Back Gearmotor Subsystem:**
 
 | Mbed | Front Right Gearmotor | Back Right Gearmotor | Front Left Gearmotor | Back Left Gearmotor |
 |-------|--------|---------|---------|---------|

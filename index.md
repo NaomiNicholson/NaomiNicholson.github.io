@@ -42,6 +42,9 @@ The mbed is powered by a 5 V battery pack.
 
 ###### Wiring:
 
+<img width="839" alt="POWERPNT_2022-05-02_14-08-40" src="https://user-images.githubusercontent.com/104459763/166301408-706779a7-02b5-480d-9b2f-7d52884f4858.png">
+
+
 **Front Gearmotor Subsystem:**
 
 | Mbed | H-Bridge Driver | Front Left Motor | Front Right Motor | 6V Battery Pack |
@@ -115,12 +118,231 @@ The mbed is powered by a 5 V battery pack.
 ## Code
 
 ```
-code snippet here
+#include "mbed.h"
+#include "Motor.h"
+#include "rtos.h"
+#include "ultrasonic.h"
+#include "Servo.h"
+
+#define BLACK_THRESHOLD 0.5
+#define MAX_SERVO 0.2
+#define INCREMENT 0.025
+
+AnalogIn ir_r (p17);
+AnalogIn ir_l (p16);
+
+AnalogIn front_right_sens (p18);
+AnalogIn front_left_sens (p19);
+Motor left_front(p21, p5, p6);
+Motor left_back(p22, p7, p8);
+Motor right_front(p23, p11, p12);
+Motor right_back(p24, p30, p29);
+Servo fan(p25);
+Serial pc(USBTX, USBRX); 
+Serial blue(p28,p27);
+void update_dist(int);
+ultrasonic back_sens(p13, p14, .2, 1, &update_dist); 
+volatile float speed;
+volatile bool obstacle = false;
+volatile bool turning = false;
+volatile int leading_dist = 100;
+volatile int curr_distance;
+volatile float current_fan_speed = 0.0f;
+void move_robot_thread(){
+    
+    // Read data from color sensor (Clear/Red/Green/Blue)
+    float ir_r_read;
+    float ir_l_read;
+    speed = 1.0;
+
+  while(1) {
+    while(obstacle);
+    ir_r_read = ir_r.read();
+    ir_l_read = ir_l.read();
+    
+    if(ir_l_read >= BLACK_THRESHOLD && ir_r_read < BLACK_THRESHOLD) { // if left detects black & right detects white, turn left
+        turning = true;
+        // speed_left = -0.4;
+        // speed_right = 0.4;
+        left_front.speed(-2*speed);
+        left_back.speed(-2*speed);
+        right_front.speed(2*speed);
+        right_back.speed(2*speed);
+    }
+    else if(ir_l_read < BLACK_THRESHOLD && ir_r_read >= BLACK_THRESHOLD) { // if right detects black & left detects white, turn right
+        // speed_right = -0.4;
+        // speed_left = 0.4;
+        left_front.speed(2*speed);
+        left_back.speed(2*speed);
+        right_front.speed(-2*speed);
+        right_back.speed(-2*speed);
+    }
+    else { // else go straight
+        // speed_left = 0.4;
+        // speed_right = 0.4;
+        left_front.speed(speed);
+        left_back.speed(speed);
+        right_front.speed(speed);
+        right_back.speed(speed);
+    }
+    
+    Thread::wait(100);
+  }
+}
+
+void crash_detect_thread() {
+    while(1) {
+//        pc.printf("right sensor: %f\n\r", front_right_sens.read());
+//        pc.printf(" left sensor: %f\n\r", front_left_sens.read());
+        if((front_right_sens.read()*3.3) >= 3 || (front_left_sens.read()*3.3) >= 3) {
+            obstacle = true;
+            left_front.speed(0);
+            left_back.speed(0);
+            right_front.speed(0);
+            right_back.speed(0);
+//            Thread::wait(100);
+        }
+        else if(obstacle) {
+            while(front_right_sens.read() > 0.45 || front_left_sens.read() > 0.45);
+            obstacle = false;
+        }
+//        else {
+//            obstacle = false;
+//        }
+        Thread::wait(100);
+    }
+}
+
+ void leading_distance_picking_thread() {
+    char bnum=0;
+    char bhit=0;
+     while(1) {
+         while(!blue.readable()){Thread::wait(200);}
+         if (blue.getc()=='!') {
+             if (blue.getc()=='B') { //button data packet
+                 bnum = blue.getc(); //button number
+                 bhit = blue.getc(); //1=hit, 0=release
+                 if (blue.getc()==char(~('!' + 'B' + bnum + bhit))) { //checksum OK?
+                     switch (bnum) {
+                         case '1': // 1 button
+                             if (bhit=='1') {
+                                 leading_dist = 100;
+                             }
+                             break;
+                         case '2': //button 6 down arrow
+                             if (bhit=='1') {
+                                 leading_dist = 130;
+                             } 
+                             break;
+                         case '3': //button 6 down arrow
+                             if (bhit=='1') {
+                                 leading_dist = 150;
+                             } 
+                             break;
+                         case '4': //button 6 down arrow
+                             if (bhit=='1') {
+                                 leading_dist = 180;
+                             } 
+                             break;
+                         default:
+                             break;
+                     }
+                 }
+             }
+         }
+     Thread::wait(500);
+     }
+ }
+void update_dist(int distance) {
+//    pc.printf(" distance in handler: %d\r\n", distance);
+    curr_distance = distance;
+}
+ void lead_distance_thread() {
+     while(1) {
+         pc.printf("Distance: %d\r\n", curr_distance);
+         pc.printf(" Speed: %f\r\n", speed);
+         if(!turning) {
+             if(curr_distance < leading_dist-20) {
+                 if(speed + 0.2 <= 1.2) {
+                     speed+=0.2;
+                    }
+             }
+             if(curr_distance > leading_dist + 20) {
+                 Thread::wait(250);
+                 if(curr_distance > leading_dist + 20) {
+                    if(speed - 0.2 >= 0.0) {
+                        speed-=0.2;
+                    }
+                }
+             }
+         }
+         Thread::wait(300);
+     }
+ }
+
+void fan_thread() {
+    fan = current_fan_speed;
+    char bnum=0;
+    char bhit=0;
+    while(1) {
+        while(!blue.readable()){Thread::wait(200);}
+        if (blue.getc()=='!') {
+            if (blue.getc()=='B') { //button data packet
+                bnum = blue.getc(); //button number
+                bhit = blue.getc(); //1=hit, 0=release
+                if (blue.getc()==char(~('!' + 'B' + bnum + bhit))) { //checksum OK?
+                    switch (bnum) {
+                        case '5': //button 5 up arrow
+                            if (bhit=='1') {
+                                if(current_fan_speed + INCREMENT <= MAX_SERVO) {
+                                    current_fan_speed += INCREMENT;
+                                    fan = current_fan_speed;
+                                }
+                            }
+                            break;
+                        case '6': //button 6 down arrow
+                            if (bhit=='1') {
+                                if(current_fan_speed - INCREMENT >= 0) {
+                                    current_fan_speed -= INCREMENT;
+                                    fan = current_fan_speed;
+                                }
+                            } 
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+        Thread::wait(500);
+    }
+
+}
+int main() {
+    pc.baud(9600);
+    back_sens.startUpdates();
+    Thread fan_move;
+    Thread move_robot;
+    Thread crash_detect;
+    Thread leading_distance;
+    Thread pick_speed;
+    crash_detect.start(crash_detect_thread);
+    move_robot.start(move_robot_thread);
+    leading_distance.start(lead_distance_thread);
+    pick_speed.start(leading_distance_picking_thread);
+    fan_move.start(fan_thread);
+    while(1){
+        back_sens.checkDistance();
+//        Thread::wait(300);
+    }
+}
 ```
 
 ## Final Results
 
 Pictures and demo videos here
+
+
 
 
 ## References

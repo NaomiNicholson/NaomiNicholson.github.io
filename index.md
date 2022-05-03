@@ -13,15 +13,19 @@ This project started off with three unique goals:
 
 Through designing the robot's line following capabilities, we experimented with different types of sensors. At the beginning of this process' implemention we were using an RGB sensor to detect the changes in colors on the floor. We decided to go with a IR reflective sensor instead after finishing the algorithm as the RGB sensor was updating the change from black to white, or vice versa, too slowly to be efficient. The IR reflective sensor proved to be more sensitive and reactive to the change in color we were observing.
 
-Additionally, we had some issues earlier on with the speed at which the robot would turn when trying to adjust itself. We were initially setting the speeds in the code to be a set value speed for "slow" or "fast". This led to instances where the robot would turn too fast and completely derail itself from the track. We solved this problem by setting the speeds to the same numerical values but setting "slow" as negative. The H-Bridge drivers allowed us to reverse the gearmotors as necessary.
+Additionally, we had some issues earlier on with the speed at which the robot would turn when trying to adjust itself. We were initially setting the speeds in the code to be a set value speed for "slow" or "fast". This led to instances where the robot would turn too fast and completely derail itself from the track. We solved this problem by setting the speeds to the same numerical values but setting "slow" as negative. The H-Bridge drivers allowed us to reverse the gearmotors as necessary and this change provided more efficient movement during the line following.
 
 ###### 2. Crash Detection:
 
-
+The crash detection functionality was accomplished using an IR distance sensor. Although requiring a lot of troubleshooting, this functionality was relatively easy to setup. The process to design this functionality mainly focused on testing the sensor and figure out what values received from the analog sensor would represent approximately 10 cm at which point the robot should stop.
 
 ###### 3. Bluetooth User-Adjustable Fan Speed and Leading Distance:
 
+The bluetooth capabilities of the fan and leading distance were straightforward to implement, thanks to Adafruit's Bluefruit module and application. 
 
+The fan was tested with different power sources during the design process and we concluded that it would require 9V in order to work. 6V and 5V batteries used for other components of the system did not provide enough power and so it requires its own battery. 
+
+The leading distance was implemented using a sonar sensor. There were some difficulties interpreting the sonar's readings at the beginning, but after much troubleshooting we were able to reasonably integrate the values to maintain four different user-picked leading distances between the user and the robot. The only issue this functionality still possesses comes into play when the robot meets a sharp edge on the track. At this point, the robot may not be aiming the sonar towards the user and this creates room for discrepencies with the expected leading distance behavior of the robot.
 
 ## How to Setup This Robot
 
@@ -129,7 +133,7 @@ The mbed is powered by a 5 V battery pack.
 
 ## Code
 
-The following block contains our final iteration of the code. This multithreaded application has a thread for each of the following processes:
+The following block contains our final iteration of the code. This multithreaded application has a thread for each of the following functionalities:
 1. Robot's movement depending on the IR reflective sensors' measurements.
 2. Crash detection depending on the IR distance sensors' measurements.
 3. Leading distance of the robot to the user depending on the sonar sensor's measurements.
@@ -366,6 +370,7 @@ int main() {
 
 [**Bluetooth Capabilities and Crash Detection**](https://youtu.be/qbLFUiYAt4Q)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qbLFUiYAt4Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 As a conclusion to our testing, we found that the robot worked best and more consistently on a semi-elliptical track. This setup allows for consistent line following, sonar readings, and obstacle detection. The full elliptical track setup we tested, which can be seen in the Line Following video above, did not work as well. In fact, other than the obstacle detection working as intended, there were some difficulty with the SONAR readings and the line following would only work 50% of the time.
 

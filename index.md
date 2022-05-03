@@ -7,9 +7,15 @@ Godspeed is a robot that follows running track lines and uses a fan to cool the 
 This project started off with three unique goals:
 1. The device would need to adjust itself and follow a predetermined line.
 2. The device would need to detect incoming collisions and avoid them.
-3. The device would need to have user-ajustable fan speed and distance between itself and the user through Bluetooth.
+4. The device would need to have user-ajustable fan speed and distance between itself and the user through Bluetooth.
 
+###### 1. Line Following:
 
+Test
+
+###### 2. Crash Detection:
+
+###### 3. Bluetooth User-Adjustable Fan Speed and Leading Distance:
 
 ## How to Setup This Robot
 
@@ -116,6 +122,15 @@ The mbed is powered by a 5 V battery pack.
 |  | Vin | + |  |
 
 ## Code
+
+The following block contains our final iteration of the code. This multithreaded application has a thread for each of the following processes:
+1. Robot's movement depending on the IR reflective sensors' measurements.
+2. Crash detection depending on the IR distance sensors' measurements.
+3. Leading distance of the robot to the user depending on the sonar sensor's measurements.
+4. Leading distance of the robot as controlled by Bluetooth depending on the Bluetooth input provided by the user.
+5. Brushless motor's (the fan) speed depending on the Bluetooth input provided by the user.
+
+The block may need to be scrolled through from left to right to read the longer lines of code.
 
 ```
 #include "mbed.h"
@@ -341,6 +356,10 @@ int main() {
 ## Final Results
 
 Pictures and demo videos here
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VvSngZXzXIo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen> </iframe>
+
+https://youtu.be/VvSngZXzXIo
 
 
 

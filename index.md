@@ -11,11 +11,17 @@ This project started off with three unique goals:
 
 ###### 1. Line Following:
 
-Test
+Through designing the robot's line following capabilities, we experimented with different types of sensors. At the beginning of this process' implemention we were using an RGB sensor to detect the changes in colors on the floor. We decided to go with a IR reflective sensor instead after finishing the algorithm as the RGB sensor was updating the change from black to white, or vice versa, too slowly to be efficient. The IR reflective sensor proved to be more sensitive and reactive to the change in color we were observing.
+
+Additionally, we had some issues earlier on with the speed at which the robot would turn when trying to adjust itself. We were initially setting the speeds in the code to be a set value speed for "slow" or "fast". This led to instances where the robot would turn too fast and completely derail itself from the track. We solved this problem by setting the speeds to the same numerical values but setting "slow" as negative. The H-Bridge drivers allowed us to reverse the gearmotors as necessary.
 
 ###### 2. Crash Detection:
 
+
+
 ###### 3. Bluetooth User-Adjustable Fan Speed and Leading Distance:
+
+
 
 ## How to Setup This Robot
 

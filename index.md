@@ -361,6 +361,16 @@ int main() {
 [**Bluetooth Capabilities and Crash Detection**](https://youtu.be/qbLFUiYAt4Q)
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qbLFUiYAt4Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+As a conclusion to our testing, we found that the robot worked best and more consistently on a semi-elliptical track. This setup allows for consistent line following, sonar readings, and obstacle detection. The full elliptical track setup we tested, which can be seen in the Line Following video above, did not work as well. In fact, other than the obstacle detection working as intended, there were some difficulty with the SONAR readings and the line following would only work 50% of the time.
+
+We believe that the following changes would lead to a smoother and reliable experience:
+1. Utilizing PID control with additional IR Reflective sensors to detect black and white on the ground. This would allow for smoother control. The error signal could be based on the exact readings of each IR sensor.
+2. Redesigning the robot chassis so that it does not sag inwards with additional weight. This will allow the wheels to have enough friction to turn properly.
+3. Having a collapsible pole will make the robot easier to transport.
+4. Having a GUI for the user to interact with robot settings
+
 ## References
 
-All URLs referenced during the project
+[1] A. Jarek, “Line Follower Arduino,” ForbiddenBit, 10-Jun-2020. [Online]. Available: https://forbiddenbit.com/en/arduino-projects/line-flower-arduino/. [Accessed: 09-Apr-2022]. 
+
+[2] 

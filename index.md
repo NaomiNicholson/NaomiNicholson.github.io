@@ -384,4 +384,4 @@ We believe that the following changes would lead to a smoother and reliable expe
 
 [1] A. Jarek, “Line Follower Arduino,” ForbiddenBit, 10-Jun-2020. [Online]. Available: https://forbiddenbit.com/en/arduino-projects/line-flower-arduino/. [Accessed: 09-Apr-2022]. 
 
-[2] 
+[2] J. Hamblen, “Adafruit Bluefruit LE UART Friend,” Mbed. [Online]. Available: https://os.mbed.com/components/Adafruit-Bluefruit-LE-UART-Friend/. [Accessed: 11-Apr-2022]. 
